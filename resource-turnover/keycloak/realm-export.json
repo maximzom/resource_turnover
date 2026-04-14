@@ -1,0 +1,73 @@
+{
+  "realm": "agriculture-realm",
+  "enabled": true,
+  "roles": {
+    "realm": [
+      {
+        "name": "ADMIN",
+        "description": "Адміністратор системи."
+      },
+      {
+        "name": "MODERATOR",
+        "description": "Модератор контенту."
+      },
+      {
+        "name": "SUPPLIER",
+        "description": "Постачальники ресурсів."
+      }
+    ]
+  },
+  "clients": [
+    {
+      "clientId": "agriculture-client",
+      "enabled": true,
+      "publicClient": true,
+      "standardFlowEnabled": true,
+      "redirectUris": [
+        "http://localhost:8181/*",
+        "http://localhost:8080/*",
+        "http://localhost:8080/swagger-ui/*",
+        "http://localhost:8080/webjars/swagger-ui/*",
+        "http://localhost:8080/swagger-ui/oauth2-redirect.html",
+        "http://localhost:8080/swagger-ui/index.html"
+      ],
+      "webOrigins": ["+"],
+      "directAccessGrantsEnabled": true
+    }
+  ],
+  "users": [
+    {
+      "username": "admin",
+      "enabled": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "admin123"
+        }
+      ],
+      "realmRoles": ["ADMIN"]
+    },
+    {
+      "username": "moderator1",
+      "enabled": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "moderator123"
+        }
+      ],
+      "realmRoles": ["MODERATOR"]
+    },
+    {
+      "username": "supplier1",
+      "enabled": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "supplier123"
+        }
+      ],
+      "realmRoles": ["SUPPLIER"]
+    }
+  ]
+}
